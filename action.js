@@ -56,6 +56,7 @@ const handlenav = () => {
 		navsearch.style.color = "#fff";
 	}
 };
+// event
 window.addEventListener("scroll", handlenav);
 
 // resposivenavbar
