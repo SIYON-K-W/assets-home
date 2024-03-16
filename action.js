@@ -74,3 +74,29 @@ const removenavbar = () => {
 		navbox.style.display = "none";
 	}, 1000);
 };
+// spotlight slider
+const imagecontainer = document.getElementsByClassName("imgcontain");
+const timer = document.getElementsByClassName("time")[0];
+const numone = document.getElementsByClassName("numone")[0];
+const numtwo = document.getElementsByClassName("numtwo")[0];
+console.log(numone, numtwo);
+const count = imagecontainer.length;
+let currentindex = 0;
+numtwo.innerHTML = count;
+const hello = () => {
+	currentindex = (currentindex + 1) % count;
+	for (i = 0; i < imagecontainer.length; i++) {
+		imagecontainer[i].classList.remove("active");
+	}
+	imagecontainer[currentindex].classList.add("active");
+	numone.innerHTML = currentindex + 1;
+};
+
+setInterval(() => {
+	if (timer.className.includes("active")) {
+		hello();
+	} else {
+		timer.classList.add("active");
+		hello();
+	}
+}, 10000);
