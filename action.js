@@ -100,3 +100,28 @@ setInterval(() => {
 		hello();
 	}
 }, 10000);
+// subscribe pop up
+const blur = document.querySelector("header .relatebox .blur");
+const popup = document.querySelector("header .relatebox .popup");
+const box = document.querySelector("header .relatebox .popup .successbox");
+
+const subscribed = (event) => {
+	event.preventDefault();
+	console.log(box);
+	const email_id = document.getElementById("Email");
+	if (email_id.value) {
+		document.querySelector("body").style.overflow = "hidden";
+		blur.style.display = "block";
+		popup.style.display = "flex";
+		document.querySelector(
+			"header .relatebox .popup .successbox .emailshow p"
+		).innerHTML = email_id.value;
+	}
+	box.style.animation = "zoomin 0.5s";
+	email_id.value = "";
+};
+const closesubscribe = () => {
+	blur.style.display = "none";
+	popup.style.display = "none";
+	document.querySelector("body").style.overflow = "";
+};

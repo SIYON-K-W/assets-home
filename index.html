@@ -115,6 +115,23 @@
 						</ul>
 					</section>
 				</div>
+				<div class="blur"></div>
+				<div class="popup">
+					<div class="successbox">
+						<div class="successimage">
+							<img
+								src="/images/success-check.jpg"
+								alt="successimage" />
+						</div>
+						<div class="emailshow">
+							<span>email id</span>
+							<span>:</span>
+							<p></p>
+						</div>
+						<p class="successpara">subscribed successfully</p>
+						<button onclick="closesubscribe()">ok</button>
+					</div>
+				</div>
 			</section>
 		</header>
 		<section id="spotlight">
@@ -140,7 +157,7 @@
 								</div>
 								<p class="numtwo"></p>
 							</div>
-							<div>
+							<div style="padding-bottom: 25px">
 								<h4>quality is asset</h4>
 								<a href="/"
 									>know more
@@ -254,12 +271,13 @@
 								</div>
 								<div class="foremail">
 									<p>newsletter suscription</p>
-									<form>
+									<form onsubmit="subscribed(event)">
 										<input
 											type="email"
 											placeholder="Your Email Address"
 											id="Email"
-											name="Email" />
+											name="Email"
+											required />
 										<input
 											type="submit"
 											value="subscribe"
